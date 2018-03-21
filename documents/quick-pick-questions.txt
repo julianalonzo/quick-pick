@@ -1,0 +1,11 @@
+Google Form Questions:
+1. Are you a SLU SABM or SCIS student?
+2. How often do you eat inside the university?
+3. Where do you usually eat inside the university?
+	- 1st floor canteen
+	- 4th floor canteen
+	- Teacup
+	- Seminary
+	- Others
+4. What is the main reason you eat at _______?
+5. Do you have a specific menu that you always order at _______?
