@@ -1,11 +1,39 @@
 Google Form Questions:
+
 1. Are you a SLU SABM or SCIS student?
+	- Yes
+	- No
+
 2. How often do you eat inside the university?
-3. Where do you usually eat inside the university?
+	- Never
+	- Rarely
+	- Sometimes
+	- Often
+	- Always
+
+3. Where do you usually eat during school days?
 	- 1st floor canteen
 	- 4th floor canteen
 	- Teacup
 	- Seminary
-	- Others
-4. What is the main reason you eat at _______?
-5. Do you have a specific menu that you always order at _______?
+	- Own apartment
+	- Others please specify
+
+4. What is the main reason you eat at (your answer in number 3)?
+	- Near
+	- Good serving
+	- Cheap
+	- Others please specify
+
+5. Do you have a usual/favorite order at (your answer in number 3)? If yes, please specify the food; if no, leave as blank.
+	- Specify
+
+6. Reasons why you feel like you do not have enough time to eat lunch
+	- Tight schedule
+	- Food places/canteens are too far
+	- Others please specify
+
+7. What are the ways you could do to have more time to eat lunch?
+	- Decide where to eat beforehand
+	- Contact food place owner to order
+	- Others please specify
