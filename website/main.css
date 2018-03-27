@@ -7,11 +7,11 @@ body {
     background-color: #ffffff;
 }
 
-#header, #footer {
+#header, #nav-sidebar-header {
     background-color: #ff3838;
 }
 
-#header .container-fluid {
+#header .container-fluid, #nav-sidebar-header {
     padding: 10px 15px;
 }
 
@@ -19,14 +19,69 @@ body {
     color: #ffffff;
 }
 
-#header svg {
+.nav-sidebar-toggler {
+    background-color: transparent;
+    outline: none !important;
+    color: #ffffff;
+    border: none;
     margin-right: 10px;
 }
 
-#header h1 {
+#header h1, #nav-sidebar-header h1 {
     font-size: 150%;
     margin-bottom: 0;
     color: #ffffff;
+}
+
+#nav-sidebar {
+    background-color: #ffffff;
+    color: #ffffff;
+    min-width: 70%;
+    max-width: 70%;
+    transition: all 0.3s;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: -75%;    
+    z-index: 9999;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#nav-sidebar.active {
+    margin-left: 0;
+}
+
+/*.overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+    display: none;
+    transition: all 0.3s;
+}*/
+
+#nav-sidebar ul {
+    margin-bottom: 0;
+}
+
+#nav-sidebar ul li.active {
+    background-color: #eaeaea;
+}
+
+#nav-sidebar ul li {
+    padding: 10px 15px;
+}
+
+#nav-sidebar a {
+    color: #000000;
+}
+
+#nav-sidebar ul svg {
+    margin-right: 20px;
 }
 
 #main .container-fluid {
@@ -42,11 +97,6 @@ body {
     height: 100%;
 }
 
-#main .card a.btn svg {
-    margin-left: 10px;
-}
-
-#footer p {
-    margin-bottom: 0;
-    color: #ffffff;
+#main .card button svg {
+    margin-right: 10px;
 }
