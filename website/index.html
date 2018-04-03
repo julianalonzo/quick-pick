@@ -20,28 +20,19 @@
 <body>
     <header id="header">
         <div class="header-wrapper container-fluid">
-            <h1><button class="nav-sidebar-toggler"><i class="fas fa-bars"></i></button>QuickPick</h1>
+            <div class="row">
+                <div class="col col-8">
+                    <h1>QuickPick</h1>
+                </div>
+
+                <nav id="nav" class="col col-4">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-info-circle"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
-    
-    <nav id="nav-sidebar">
-        <div id="nav-sidebar-header">
-            <h1><button class="nav-sidebar-toggler"><i class="fas fa-bars"></i></button>QuickPick</h1>
-        </div>
-
-        <ul>
-            <li class="active">
-                <a href="index.html">
-                    <i class="fas fa-home"></i>Home
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-info-circle"></i>About Us
-                </a>
-            </li>
-        </ul>
-    </nav>
 
     <main id="main">
         <div class="container-fluid">
@@ -159,23 +150,12 @@
                 </div>
             </div>
         </div>
-
-        <div class="overlay"></div>
     </main>
-    
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <!-- Custom Script -->
-    <script>
-        $(document).ready(function() {
-            $('.nav-sidebar-toggler').on('click', function() {
-                $('#nav-sidebar').toggleClass('active');
-            });          
-        });
-    </script>
 </body>
 </html>
