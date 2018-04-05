@@ -50,7 +50,11 @@ main {
     height: 100vh;
 }
 
-#sectionA h2, .daily-menu h3 {
+main.no-padding {
+    padding: 0 20px 10px 0;
+}
+
+#sectionA h2, .daily-menu-container h3 {
     margin-bottom: 0;
     color: #ffffff;
     text-align: center;
@@ -59,17 +63,51 @@ main {
     font-weight: 100;
 }
 
-.daily-menu {
+.daily-menu-container {
     background-color: #ffffff;
     padding: 10px 5px;
 }
 
-.daily-menu h3 {
+.daily-menu-container h3 {
     color: #2d3436;
 }
 
-.daily-menu ul {
+.daily-menu-container ul {
     list-style-position: inside;
-    padding: 0 30px;
+    padding: 0 20px;
     margin-bottom: 30px;
+    list-style-type: square;
+}
+
+.plate {
+    width: 100%;
+    height: 50%;
+    border-bottom-right-radius: 100%;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.food-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.food-wrapper {
+    display: inline-block;
+    background-color: darkgray;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.food-wrapper h2 {
+    font-family: ShineBright;
+    font-size: 48px;
+    margin-bottom: 0;
+}
+
+.food-wrapper ul {
+    list-style-type: square;
+    list-style-position: inside;
+    padding-left: 0;
 }
