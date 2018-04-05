@@ -18,138 +18,41 @@
 <title>QuickPick | Welcome</title>
 </head>
 <body>
-    <header id="header">
-        <div class="header-wrapper container-fluid">
-            <div class="row">
-                <div class="col col-8">
-                    <h1><a href="index.html">QuickPick</a></h1>
-                </div>
-
-                <nav id="nav" class="col col-4">
-                    <ul>
-                        <li><a href="about.html"><i class="fas fa-info-circle"></i></a></li>
-                    </ul>
-                </nav>
+    <header>
+        <div class="header-wrapper">
+            <div>
+                <h1 id="branding">qP</h1>
+            </div>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder ="Search..." id="searchBar">
+            </div>
+            <div>
+                <i id="menuToggler" class="fas fa-bars"></i>
             </div>
         </div>
     </header>
 
-    <main id="main">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col col-12 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card">
-                        <img class="card-img-top" src="img/canteen.jpg" alt="1st floor canteen">
-                        <div class="card-body">
-                            <h5 class="card-title">1st Floor Canteen</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, sit.</p>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#modal1"><i class="fas fa-utensils"></i>View menu</button>
+    <main>
+        <section id="sectionA">
+            <h2>Quick Pick</h2>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">1st Floor Canteen</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus deserunt dignissimos doloremque, ab. Dolor architecto eligendi, voluptas atque soluta rem.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="daily-menu">
+                <h3>Menu</h3>
 
-                <div class="col col-12 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card">
-                        <img class="card-img-top" src="img/canteen1.jpg" alt="3rd floor canteen">
-                        <div class="card-body">
-                            <h5 class="card-title">3rd Floor Canteen</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, sit.</p>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#modal2"><i class="fas fa-utensils"></i>View menu</button>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">3rd Floor Canteen</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus deserunt dignissimos doloremque, ab. Dolor architecto eligendi, voluptas atque soluta rem.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col col-12 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card">
-                        <img class="card-img-top" src="img/canteen.jpg" alt="Teacup">
-                        <div class="card-body">
-                            <h5 class="card-title">Teacup</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, sit.</p>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#modal3"><i class="fas fa-utensils"></i>View menu</button>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modal3" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Teacup</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus deserunt dignissimos doloremque, ab. Dolor architecto eligendi, voluptas atque soluta rem.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col col-12 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card">
-                        <img class="card-img-top" src="img/canteen.jpg" alt="Seminary">
-                        <div class="card-body">
-                            <h5 class="card-title">Seminary</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, sit.</p>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#modal4"><i class="fas fa-utensils"></i>View menu</button>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="modal4" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Seminary</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus deserunt dignissimos doloremque, ab. Dolor architecto eligendi, voluptas atque soluta rem.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                </ul>
             </div>
-        </div>
+        </section>
     </main>
 
     <!-- Optional JavaScript -->
