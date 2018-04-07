@@ -14,9 +14,9 @@ header {
 }
 
 .header-wrapper {
-    padding: 5px 10px;
+    padding: 5px 15px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -24,6 +24,7 @@ header {
     font-size: 32px;
     font-family: ShineBright;
     text-align: center;
+    padding-left: 10px;
 }
 
 .search-container {
@@ -45,9 +46,9 @@ header {
 
 /* Main */
 main {
-    background-color: #2d3436;
+    background-color: #1.9d3436;
     padding: 10px;
-    height: 100vh;
+    height: 90vh;
 }
 
 main.no-padding {
@@ -74,7 +75,7 @@ main.no-padding {
 
 .daily-menu-container ul {
     list-style-position: inside;
-    padding: 0 20px;
+    padding: 0 15px;
     margin-bottom: 30px;
     list-style-type: square;
 }
