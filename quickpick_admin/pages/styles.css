@@ -69,3 +69,55 @@ textarea {
 #foodAddedAlert {
     display: none;
 }
+
+.food-img-lg {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.description {
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+#foodModal .simple-form {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #000000;
+}
+
+#foodModal .modal-title {
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+#foodModal .close span {
+    line-height: 1.5;
+}
+
+#foodModal .price-prepend {
+    font-size: 24px;
+}
+
+#foodDescription {
+    width: 100%;
+    font-size: 16px !important;
+    font-weight: bolder;
+}
+
+.circular-button {
+    width: 60px;
+    height: 60px;
+    background-color: #1b191b;
+    color: #ffff;
+    border: none;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 22px;
+}
+
+#deleteFoodForm {
+    display: none;
+}

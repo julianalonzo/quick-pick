@@ -60,6 +60,58 @@
         </div>
     </div>
 
+    <div class="modal fade" id="foodModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-10">
+                                <div contenteditable="false">
+                                    <h3 class="modal-title"></h3>                        
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <button type="button" class="close" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                <img src="../assets/logo.png" alt="Quickpick" id="foodImage" class="food-img-lg mr-3">                        
+                            </div>
+                            <div class="col-12">
+                                <div class="food-content">                               
+                                    <span class="price-prepend">₱</span><input type="number" id="foodPrice" class="simple-form">                                                            
+                                    <div contenteditable="false" id="foodDescription" class="simple-form"></div>
+                                </div>
+                            </div>
+                            <div class="col-12 text-right mt-5 pr-0">
+                                <button id="editButton" class="circular-button mr-1">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                                <button id="deleteButton" class="circular-button bg-danger">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                                <!-- <button id="doneButton" class="circular-button bg-success">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button id="cancelButton" class="circular-button bg-danger">
+                                    <i class="fas fa-ban"></i>
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <button class="float align-items-start" data-toggle="modal" data-target="#addFoodModal">
         <i class="fa fa-plus"></i>
     </button>
@@ -112,6 +164,10 @@
             </form>
         </div>
     </div>
+
+    <form action="../php_scripts/delete_food.php" id="deleteFoodForm" method="POST">
+        <input type="number" id="foodIdDelete" name="foodId">
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>

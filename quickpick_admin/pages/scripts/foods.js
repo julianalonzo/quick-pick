@@ -29,6 +29,9 @@ request.onreadystatechange = () => {
                 foodItem.setAttribute('data-id', response[i].food_id);
                 foodItem.appendChild(foodItemImage);
                 foodItem.appendChild(foodItemLabel);
+                foodItem.addEventListener('click', function() {
+                    viewFood(response[i]);
+                })
 
                 foodList.appendChild(foodItem);
             }
@@ -38,6 +41,50 @@ request.onreadystatechange = () => {
 
 request.open('GET', '../php_scripts/get_foods.php', true);
 request.send();
+
+// Show food
+function viewFood(food) {
+    const foodId = food.food_id;
+    
+    const foodModal = document.getElementById('foodModal');
+    foodModal.setAttribute('data-id', foodId);
+
+    const foodNameText = document.createTextNode(food.food_name);
+    const foodName = document.querySelector('#foodModal .modal-title');
+    foodName.innerHTML = '';
+    foodName.appendChild(foodNameText);
+
+    const foodImage = document.getElementById('foodImage');
+    foodImage.setAttribute('src', '../assets/logo.png');
+    foodImage.setAttribute('alt', food.food_name);
+
+    if (food.photo) {
+        foodImage.setAttribute('src', food.photo);
+    }
+
+    let foodPriceText = 'No price added';
+
+    if (food.price) {
+        foodPriceText = food.price;
+    }
+
+    const foodPrice = document.getElementById('foodPrice');
+    foodPrice.setAttribute('value', foodPriceText);
+    foodPrice.setAttribute('disabled', 'true');
+
+    let descriptionText = document.createTextNode('No description added');
+
+    if (food.description) {
+        descriptionText = document.createTextNode(food.description);
+    }
+
+    const foodDescription = document.getElementById('foodDescription');
+    foodDescription.innerHTML = '';
+    foodDescription.appendChild(descriptionText);
+    // foodDescription.setAttribute('disabled', 'true');
+
+    $('#foodModal').modal('show');
+}
 
 // Show alert for successful insert
 const url = new URL(window.location.href);
@@ -64,3 +111,35 @@ imageFile.addEventListener('change', () => {
         reader.readAsDataURL(imageFile.files[0]);
     }
 });
+
+// Action button handlers
+const closeFoodModalButton = document.querySelector('#foodModal .close');
+closeFoodModalButton.addEventListener('click', function() {
+    const foodModal = document.getElementById('foodModal');
+    foodModal.removeAttribute('data-id');
+
+    $('#foodModal').modal('hide');
+});
+
+const editButton = document.getElementById('editButton');
+editButton.addEventListener('click', function() {
+    console.log('Edit mode');
+});
+
+const deleteButton = document.getElementById('deleteButton');
+deleteButton.addEventListener('click', function() {
+    const foodModal = foodId = document.getElementById('foodModal');
+
+    if (window.confirm('Are you sure you want to delete this item?')) {
+        deleteFood(foodModal.getAttribute('data-id'));        
+    }
+});
+
+function deleteFood(foodId) {
+    const deleteForm = document.getElementById('deleteFoodForm');
+
+    const foodIdDeleteInput = document.getElementById('foodIdDelete');
+    foodIdDeleteInput.setAttribute('value', foodId);
+
+    deleteForm.submit();
+}
