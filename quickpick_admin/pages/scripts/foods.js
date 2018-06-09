@@ -115,15 +115,15 @@ imageFile.addEventListener('change', () => {
 // Action button handlers
 const closeFoodModalButton = document.querySelector('#foodModal .close');
 closeFoodModalButton.addEventListener('click', function() {
-    const foodModal = document.getElementById('foodModal');
-    foodModal.removeAttribute('data-id');
-    
     resetFoodModal();
 
     $('#foodModal').modal('hide');
 });
 
 function resetFoodModal() {
+    const foodModal = document.getElementById('foodModal');
+    foodModal.removeAttribute('data-id');
+
     const doneButton = document.getElementById('doneButton');
     const cancelButton = document.getElementById('cancelButton');
     const deleteButton = document.getElementById('deleteButton');
@@ -157,7 +157,7 @@ cancelButton.addEventListener('click', function() {
     if (window.confirm('Are you sure you want to cancel editing this item?')) {
         resetFoodModal();
     }
-})
+});
 
 function deleteFood(foodId) {
     const deleteForm = document.getElementById('deleteFoodForm');

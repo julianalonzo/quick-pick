@@ -44,9 +44,9 @@
         <div class="row">
             <div class="col-10">
                 <div class="d-flex justify-content-around align-items-center">
-                    <h3><i class="fas fa-angle-left"></i></h3>
+                    <a id="yesterday" class="date-arrow"><h3><i class="fas fa-angle-left"></i></h3></a>
                     <h3 id="date"></h3>
-                    <h3><i class="fas fa-angle-right"></i></h3>
+                    <a id="tomorrow" class="date-arrow"><h3><i class="fas fa-angle-right"></i></h3></a>
                 </div>
             </div>
             <div class="col-2">
@@ -57,9 +57,34 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <ul class="list-group" id="dashboardList">
-                </ul>
+                <ul class="list-group" id="dashboardList"></ul>
             </div>
+        </div>
+    </div>
+
+    <button class="float align-items-start" id="addDashboardButton">
+        <i class="fa fa-plus"></i>
+    </button>
+
+    <div class="modal fade" id="addDashboardModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <form action="../php_scripts/insert_dashboard.php" method="POST" id="dashboardForm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Food/s</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ul id="foodList" class="list-group">
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success">Add food</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 

@@ -139,3 +139,42 @@ textarea {
     font-size: 24px;
     color: #d9534f;
 }
+
+#dashboardForm {
+    width: 100%;
+}
+
+#foodList input[type="checkbox"] {
+    display: none;
+}
+
+#foodList label {
+    cursor: pointer;
+}
+
+#foodList input[type="checkbox"] + label:before {
+    content: "\f111";
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-size: 24px;
+    margin-right: 20px;
+    color: #1b191b;
+}
+
+#foodList input[type="checkbox"]:checked + label:before {
+    content: "\f058";
+    color: #5cb85c;
+}
+
+.date-arrow {
+    color: #000000;
+}
+
+.date-arrow:active, .date-arrow:hover {
+    color: #000000;
+}
