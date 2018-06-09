@@ -70,7 +70,7 @@ function viewFood(food) {
 
     const foodPrice = document.getElementById('foodPrice');
     foodPrice.setAttribute('value', foodPriceText);
-    foodPrice.setAttribute('disabled', 'true');
+    foodPrice.setAttribute('disabled', '');
 
     let descriptionText = document.createTextNode('No description added');
 
@@ -117,23 +117,47 @@ const closeFoodModalButton = document.querySelector('#foodModal .close');
 closeFoodModalButton.addEventListener('click', function() {
     const foodModal = document.getElementById('foodModal');
     foodModal.removeAttribute('data-id');
+    
+    resetFoodModal();
 
     $('#foodModal').modal('hide');
 });
 
+function resetFoodModal() {
+    const doneButton = document.getElementById('doneButton');
+    const cancelButton = document.getElementById('cancelButton');
+    const deleteButton = document.getElementById('deleteButton');
+    const editButton = document.getElementById('editButton');
+    const imageUploader = document.getElementById('imageUploader');
+
+    doneButton.style.display = 'none';
+    cancelButton.style.display = 'none';
+    imageUploader.style.display = 'none';
+
+    deleteButton.style.display = 'inline-block';
+    editButton.style.display = 'inline-block';
+}
+
 const editButton = document.getElementById('editButton');
 editButton.addEventListener('click', function() {
-    console.log('Edit mode');
+    editFood(foodModal.getAttribute('data-id'));
 });
 
 const deleteButton = document.getElementById('deleteButton');
 deleteButton.addEventListener('click', function() {
-    const foodModal = foodId = document.getElementById('foodModal');
+    const foodModal = document.getElementById('foodModal');
 
     if (window.confirm('Are you sure you want to delete this item?')) {
         deleteFood(foodModal.getAttribute('data-id'));        
     }
 });
+
+const cancelButton = document.getElementById('cancelButton');
+cancelButton.addEventListener('click', function() {
+    if (window.confirm('Are you sure you want to cancel editing this item?')) {
+        resetFoodModal();
+    }
+})
 
 function deleteFood(foodId) {
     const deleteForm = document.getElementById('deleteFoodForm');
@@ -143,3 +167,45 @@ function deleteFood(foodId) {
 
     deleteForm.submit();
 }
+
+function editFood(foodId) {
+    const doneButton = document.getElementById('doneButton');
+    const cancelButton = document.getElementById('cancelButton');
+    const deleteButton = document.getElementById('deleteButton');
+    const editButton = document.getElementById('editButton');
+    const imageUploader = document.getElementById('imageUploader');
+
+    doneButton.style.display = 'inline-block';
+    cancelButton.style.display = 'inline-block';
+    imageUploader.style.display = 'inline-block';
+
+    deleteButton.style.display = 'none';
+    editButton.style.display = 'none';
+
+    const modalTitleContainer = document.getElementById('modalTitleContainer');
+    const foodPrice = document.getElementById('foodPrice');
+    const foodDescription = document.getElementById('foodDescription');
+
+    modalTitleContainer.setAttribute('contenteditable', 'true');
+    foodPrice.removeAttribute('disabled');
+    foodDescription.setAttribute('contenteditable', 'true');
+
+    modalTitleContainer.focus();
+}
+
+// Image live preview (Food Modal)
+const imageUploadFile = document.getElementById('imageUploadFile');
+
+imageUploadFile.addEventListener('change', () => {
+    if (imageUploadFile.files && imageUploadFile.files[0]) {
+        let reader = new FileReader();
+
+        reader.onload = (e) => {
+            let uploadPreview = document.getElementById('foodImage');
+
+            uploadPreview.setAttribute('src', e.target.result);
+        }
+
+        reader.readAsDataURL(imageUploadFile.files[0]);
+    }
+});

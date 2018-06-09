@@ -67,8 +67,8 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-10">
-                                <div contenteditable="false">
-                                    <h3 class="modal-title"></h3>                        
+                                <div contenteditable="false" id="modalTitleContainer">
+                                    <h3 class="modal-title"></h3>                       
                                 </div>
                             </div>
                             <div class="col-2">
@@ -82,8 +82,18 @@
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-12 mb-3">
-                                <img src="../assets/logo.png" alt="Quickpick" id="foodImage" class="food-img-lg mr-3">                        
+                            <div class="col-12 mb-3">                   
+                                <div class="d-flex">
+                                    <div class="mr-3">
+                                        <img src="../assets/logo.png" alt="Quickpick" id="foodImage" class="food-img-lg mr-3">
+                                    </div>
+                                    <div id="imageUploader">
+                                        <input type="file" class="form-control-file" id="imageUploadFile" name="photo" accept="image/*">
+                                        <small class="form-text text-muted">
+                                            You can edit the image of the food by uploading your own. This is optional.
+                                        </small>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-12">
                                 <div class="food-content">                               
@@ -98,12 +108,12 @@
                                 <button id="deleteButton" class="circular-button bg-danger">
                                     <i class="fas fa-trash"></i>
                                 </button>
-                                <!-- <button id="doneButton" class="circular-button bg-success">
+                                <button id="doneButton" class="circular-button bg-success mr-1">
                                     <i class="fas fa-check"></i>
                                 </button>
                                 <button id="cancelButton" class="circular-button bg-danger">
                                     <i class="fas fa-ban"></i>
-                                </button> -->
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -167,6 +177,10 @@
 
     <form action="../php_scripts/delete_food.php" id="deleteFoodForm" method="POST">
         <input type="number" id="foodIdDelete" name="foodId">
+    </form>
+
+    <form action="../php_scripts/update_food.php" id="updateFoodForm" method="POST">
+        
     </form>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
