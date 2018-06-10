@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Quickpick | About</title>
+        <title>Quickpick | Foods</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
@@ -26,39 +26,29 @@
                     <li class="nav-item">
                         <a class="nav-link" href="./canteens.html">Canteens</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./foods.html">Foods</a>
-                    </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="./about.html">About<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="./foods.html">Foods<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">About</a>
                     </li>  
                 </ul>
             </div>
         </nav>
         <main id="main">
-            <div class="container col-md-8" id="about">
-                <div class="container">
-                    <h2>About QuickPick</h2>
-                    <p>Do you feel like you are always short on time during lunch breaks? Have you experienced ordering something you did not like just because you had no choice? Are you tired of eating at the same place everyday?</p>
-                    <p>QuickPick is the solution you need!</p>
-                    <p>QuickPick is an online food menu that displays ahead of time the daily food servings of the selected food places  near the SLU Maryheights Campus (e.g., 1st floor canteen, 3rd floor canteen, Teacup, etc.)</p>
-                    <p>It aims to assist SABM and SCIS students and professors to easily plan their meals for tomorrow.</p>
-                </div>
-                <div class="container col-md-8" id="developers">
-                    <h2>Developers</h2>
-                    <div class="row">
-                        <div class="person">
-                            <img src="./assets/faces/julian.jpg">
-                            <p><span>ALONZO,</span><span>Julian Aubrey M.</span></p>
+            <div class="container">
+                <div class="row" id="food-list">
+                    <div class="container col-md-4">
+                        <img src="./css/img/empty-plate.png" class="food-img">
+                    </div>
+                    <div class="container col-md-6" id="food-details">
+                        <h1 class="design" id="design-top">U</h1>
+                        <div class="container col-sm-10">
+                            <h2 class="food-name">Chicken Adobo <span id="with">j</span> rice</h2>
+                            <p class="food-place">Dish available @Emerson Canteen</p>
+                            <p class="food-price">Php 50.00</p>
                         </div>
-                        <div class="person">
-                            <img src="./assets/faces/dawn.jpg">
-                            <p><span>CUNDANGAN,</span><span>Dawn A.</span></p>
-                        </div>
-                        <div class="person">
-                            <img src="./assets/faces/ian.jpg">
-                            <p><span>CULANAG,</span><span>Ian Jemuel N.</span></p>
-                        </div>
+                        <h1 class="design" id="design-bottom">X</h1>
                     </div>
                 </div>
             </div>

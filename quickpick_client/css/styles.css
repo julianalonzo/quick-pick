@@ -114,8 +114,42 @@ div.menu-items ol > ul > li:hover{
 /* Canteens */
 
 
+/* Food */
+.food-img {
+	width: 30vw;
+}
+
+#food-details {
+	color: black;
+    background-color: white;
+}
+
+#food-details #design-top {
+    padding-top: 7vh;
+    margin-bottom: 5vh;
+}
+
+.food-name {
+	font-family: heart;
+	font-size: 8vh;
+}
+
+#with {
+    font-family: beaver;
+    font-size: 5vh;
+}
+
+.food-place {
+    padding-left: 2vw;
+}
+
+.food-price {
+	margin-left: 20vw;
+}
+
 /* About */
 #main {
+    width: 100%;
     padding-top: 5vh;
 }
 
@@ -125,7 +159,7 @@ div.menu-items ol > ul > li:hover{
 }
 
 #about div {
-    padding-bottom: 5vh;
+    padding-bottom: 4vh;
 }
 
 .person p span {
