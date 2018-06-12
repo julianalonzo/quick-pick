@@ -30,6 +30,8 @@
         } else {
             Header('Location: ../pages/foods.html?foodInserted=false');
         }
+
+        $statement->close();
     } else {
         Header('Location: ../index.html');
     }

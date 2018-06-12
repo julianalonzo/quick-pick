@@ -5,7 +5,6 @@
 
     if (isset($_SESSION['username'])) {
         $username = $_SESSION['username'];
-
         $food_id = $_POST['foodId'];
 
         $query = 'DELETE FROM food WHERE food_id = ? AND username = ?';
@@ -21,6 +20,8 @@
         } else {
             Header('Location: ../pages/foods.html?foodDeleted=false');
         }
+
+        $statement->close();
     } else {
         Header('Location: ../index.html');
     }

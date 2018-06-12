@@ -42,17 +42,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-10">
+            <div class="col-12">
                 <div class="d-flex justify-content-around align-items-center">
                     <a id="yesterday" class="date-arrow"><h3><i class="fas fa-angle-left"></i></h3></a>
                     <h3 id="date"></h3>
                     <a id="tomorrow" class="date-arrow"><h3><i class="fas fa-angle-right"></i></h3></a>
                 </div>
-            </div>
-            <div class="col-2">
-                <label for="datePicker">
-                    <h3><i class="fas fa-calendar-alt"></i></h3>
-                </label>
             </div>
         </div>
         <div class="row">
@@ -77,8 +72,13 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <ul id="foodList" class="list-group">
+                        <ul id="foodList" class="list-group mb-3">
                         </ul>
+                        <p id="dateLabel" class="mb-2"></p>
+                        <input type="text" id="dateInput" name="date" class="form-control">
+
+                        <label for="time">Time: </label>
+                        <input type="time" id="time" name="time" class="form-control" required>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success">Add food</button>
@@ -87,6 +87,10 @@
             </form>
         </div>
     </div>
+
+    <form action="../php_scripts/delete_dashboard.php" method="POST" id="deleteDashboardForm">
+        <input type="number" id="deleteFoodId" name="dashboard_id">
+    </form>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>

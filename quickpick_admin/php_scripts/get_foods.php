@@ -24,6 +24,8 @@
 
         $result = $statement->get_result();
 
+        $foods = array();
+
         while ($row = $result->fetch_assoc()) {
             $foods[] = $row;
         }

@@ -21,7 +21,7 @@ request.onreadystatechange = () => {
                 let foodName = document.createTextNode(response[i].food_name);
 
                 let foodItemLabel = document.createElement('H5');
-                foodItemLabel.classList.add('mb-0');
+                foodItemLabel.classList.add('mb-0', 'overflow-ellipsis');
                 foodItemLabel.appendChild(foodName);
 
                 let foodItem = document.createElement('LI');
@@ -49,10 +49,11 @@ function viewFood(food) {
     const foodModal = document.getElementById('foodModal');
     foodModal.setAttribute('data-id', foodId);
 
-    const foodNameText = document.createTextNode(food.food_name);
-    const foodName = document.querySelector('#foodModal .modal-title');
-    foodName.innerHTML = '';
-    foodName.appendChild(foodNameText);
+    const foodName = document.getElementById('modalTitle');
+    foodName.removeAttribute('value');
+    foodName.setAttribute('value', food.food_name);
+    foodName.setAttribute('disabled', '');
+    foodName.classList.add('simple-form');
 
     const foodImage = document.getElementById('foodImage');
     foodImage.setAttribute('src', '../assets/logo.png');
@@ -64,7 +65,7 @@ function viewFood(food) {
 
     let foodPriceText = 'No price added';
 
-    if (food.price) {
+    if (food.price > 0) {
         foodPriceText = food.price;
     }
 
@@ -81,7 +82,6 @@ function viewFood(food) {
     const foodDescription = document.getElementById('foodDescription');
     foodDescription.innerHTML = '';
     foodDescription.appendChild(descriptionText);
-    // foodDescription.setAttribute('disabled', 'true');
 
     $('#foodModal').modal('show');
 }
@@ -136,6 +136,14 @@ function resetFoodModal() {
 
     deleteButton.style.display = 'inline-block';
     editButton.style.display = 'inline-block';
+
+    const modalTitle = document.getElementById('modalTitle');
+    const foodPrice = document.getElementById('foodPrice');
+    const foodDescription = document.getElementById('foodDescription');
+
+    modalTitle.setAttribute('disabled', '');
+    foodPrice.setAttribute('disabled', '');
+    foodDescription.setAttribute('disabled', '');
 }
 
 const editButton = document.getElementById('editButton');
@@ -182,15 +190,19 @@ function editFood(foodId) {
     deleteButton.style.display = 'none';
     editButton.style.display = 'none';
 
-    const modalTitleContainer = document.getElementById('modalTitleContainer');
+    const modalTitle = document.getElementById('modalTitle');
     const foodPrice = document.getElementById('foodPrice');
     const foodDescription = document.getElementById('foodDescription');
 
-    modalTitleContainer.setAttribute('contenteditable', 'true');
-    foodPrice.removeAttribute('disabled');
-    foodDescription.setAttribute('contenteditable', 'true');
+    if (foodDescription.innerHTML = 'No description added') {
+        foodDescription.innerHTML = '';
+    }
 
-    modalTitleContainer.focus();
+    modalTitle.removeAttribute('disabled');
+    foodPrice.removeAttribute('disabled');
+    foodDescription.removeAttribute('disabled');
+
+    modalTitle.focus();
 }
 
 // Image live preview (Food Modal)

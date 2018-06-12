@@ -6,27 +6,26 @@
     if (isset($_SESSION['username'])) {
         $username = $_SESSION['username'];
         $food_selected = $_POST['food_selected'];
+        $date = $_POST['date'] . ' ' . $_POST['time'];
 
         if (!empty($food_selected)) {
             foreach($food_selected as $id) {
-                $query = 'INSERT INTO dashboard ()';
+                $query = 'INSERT INTO dashboard (food_id, date) VALUES (?, ?)';
 
                 $statement = $conn->prepare($query);
 
-                $statement->bind_param('sssdb', $username, $food_name, $description, $price, $photo);
-
-                if (isset($_FILES['photo'])) {
-                    $statement->send_long_data(4, file_get_contents($_FILES['photo']['tmp_name']));
-                }
+                $statement->bind_param('ss', $id, $date);
 
                 $statement->execute();
-
-                if ($statement->affected_rows > 0) {
-                    Header('Location: ../pages/dashboard.html?foodInserted=true');
-                } else {
-                    Header('Location: ../pages/dashboard.html?foodInserted=false');
-                }
             }
+
+            if ($statement->affected_rows > 0) {
+                Header('Location: ../pages/dashboard.html?foodInserted=true');
+            } else {
+                Header('Location: ../pages/dashboard.html?foodInserted=false');
+            }
+
+            $statement->close();
         }
     } else {
         Header('Location: ../index.html');
