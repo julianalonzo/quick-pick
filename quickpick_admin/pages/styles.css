@@ -195,3 +195,7 @@ textarea {
 #deleteDashboardForm {
     display: none;
 }
+
+#foodId {
+    display: none;
+}

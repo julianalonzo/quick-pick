@@ -30,7 +30,7 @@ request.onreadystatechange = () => {
             const image = document.createElement('IMG');
             image.setAttribute('src', '../assets/logo.png');
 
-            if (foods[i].photo) {
+            if (foods[i].photo != 'data:image;base64,') {
                 image.setAttribute('src', foods[i].photo);                
             }
 
@@ -142,6 +142,7 @@ request.send();
 const dateRequest = rawDate.getFullYear() + '-' +
                     (rawDate.getMonth() + 1) + '-' +
                     rawDate.getDate();
+
 const dateInput = document.getElementById('dateInput');
 dateInput.setAttribute('value', dateRequest);
 
@@ -151,6 +152,10 @@ dateLabelForm.appendChild(dateTextForm);
 
 const addButton = document.getElementById('addDashboardButton');
 addButton.addEventListener('click', showAddModal);
+
+// Set delete date
+const deleteDate = document.getElementById('deleteDate');
+deleteDate.setAttribute('value', dateRequest);
 
 function showAddModal() {
     const foodList = document.getElementById('foodList');
@@ -171,7 +176,7 @@ function showAddModal() {
                 image.setAttribute('alt', 'Quickpick');
                 image.classList.add('food-img', 'mr-3');
 
-                if (foods[i].photo) {
+                if (foods[i].photo != 'data:image;base64,') {
                     image.setAttribute('src', foods[i].photo);
                 }
 

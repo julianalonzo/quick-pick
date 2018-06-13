@@ -20,7 +20,7 @@
             }
 
             if ($statement->affected_rows > 0) {
-                Header('Location: ../pages/dashboard.html?foodInserted=true');
+                Header('Location: ../pages/dashboard.html?date=' . $date);
             } else {
                 Header('Location: ../pages/dashboard.html?foodInserted=false');
             }

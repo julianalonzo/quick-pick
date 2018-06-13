@@ -1,3 +1,5 @@
+let editMode = false;
+
 // Get foods from database
 let request = new XMLHttpRequest();
 
@@ -12,7 +14,7 @@ request.onreadystatechange = () => {
                 let foodItemImage = document.createElement('IMG');
                 foodItemImage.classList.add('food-img', 'mr-3');
 
-                if (response[i].photo) {
+                if (response[i].photo != 'data:image;base64,') {
                     foodItemImage.setAttribute('src', response[i].photo);
                 } else {
                     foodItemImage.setAttribute('src', '../assets/logo.png');
@@ -59,7 +61,7 @@ function viewFood(food) {
     foodImage.setAttribute('src', '../assets/logo.png');
     foodImage.setAttribute('alt', food.food_name);
 
-    if (food.photo) {
+    if (food.photo != 'data:image;base64,') {
         foodImage.setAttribute('src', food.photo);
     }
 
@@ -83,7 +85,10 @@ function viewFood(food) {
     foodDescription.innerHTML = '';
     foodDescription.appendChild(descriptionText);
 
-    $('#foodModal').modal('show');
+    const foodIdInput = document.getElementById('foodId');
+    foodIdInput.setAttribute('value', foodId);
+
+    $('#foodModal').modal({backdrop: 'static', keyboard: false});
 }
 
 // Show alert for successful insert
@@ -115,12 +120,20 @@ imageFile.addEventListener('change', () => {
 // Action button handlers
 const closeFoodModalButton = document.querySelector('#foodModal .close');
 closeFoodModalButton.addEventListener('click', function() {
-    resetFoodModal();
+    if (editMode) {
+        if (window.confirm('Are you sure you want to discard the changes?')) {
+            resetFoodModal();
+        }
+    } else {
+        resetFoodModal();
+    }
 
     $('#foodModal').modal('hide');
 });
 
 function resetFoodModal() {
+    editMode = false;
+
     const foodModal = document.getElementById('foodModal');
     foodModal.removeAttribute('data-id');
 
@@ -148,7 +161,7 @@ function resetFoodModal() {
 
 const editButton = document.getElementById('editButton');
 editButton.addEventListener('click', function() {
-    editFood(foodModal.getAttribute('data-id'));
+    editFood();
 });
 
 const deleteButton = document.getElementById('deleteButton');
@@ -162,8 +175,9 @@ deleteButton.addEventListener('click', function() {
 
 const cancelButton = document.getElementById('cancelButton');
 cancelButton.addEventListener('click', function() {
-    if (window.confirm('Are you sure you want to cancel editing this item?')) {
+    if (window.confirm('Are you sure you want to discard the changes?')) {
         resetFoodModal();
+        window.location.reload();
     }
 });
 
@@ -176,7 +190,9 @@ function deleteFood(foodId) {
     deleteForm.submit();
 }
 
-function editFood(foodId) {
+function editFood() {
+    editMode = true;
+
     const doneButton = document.getElementById('doneButton');
     const cancelButton = document.getElementById('cancelButton');
     const deleteButton = document.getElementById('deleteButton');
@@ -193,10 +209,6 @@ function editFood(foodId) {
     const modalTitle = document.getElementById('modalTitle');
     const foodPrice = document.getElementById('foodPrice');
     const foodDescription = document.getElementById('foodDescription');
-
-    if (foodDescription.innerHTML = 'No description added') {
-        foodDescription.innerHTML = '';
-    }
 
     modalTitle.removeAttribute('disabled');
     foodPrice.removeAttribute('disabled');
