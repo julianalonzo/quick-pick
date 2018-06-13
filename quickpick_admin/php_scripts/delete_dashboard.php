@@ -16,9 +16,9 @@
         $statement->execute();
 
         if ($statement->affected_rows > 0) {
-            Header('Location: ../pages/dashboard.html?date=' . $date);
+            Header('Location: ../pages/dashboard.html?date=' . $date . ' 00:00:00');
         } else {
-            Header('Location: ../pages/dashboard.html?date=' . $date);
+            Header('Location: ../pages/dashboard.html?date=' . $date . ' 00:00:00');
         }
 
         $statement->close();

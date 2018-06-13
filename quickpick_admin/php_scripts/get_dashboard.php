@@ -28,7 +28,7 @@
                     'CONCAT(\'data:image;base64,\', TO_BASE64(photo)) AS photo ' . 
                     'FROM dashboard JOIN food ON dashboard.food_id = food.food_id ' . 
                     'WHERE (date BETWEEN ? AND ?) AND username = ? ' . 
-                    'ORDER BY date';
+                    'ORDER BY date, food_name';
 
         $statement = $conn->prepare($query);
 

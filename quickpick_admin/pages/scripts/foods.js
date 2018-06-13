@@ -1,4 +1,4 @@
-let editMode = false;
+let editMode = false;0
 
 // Get foods from database
 let request = new XMLHttpRequest();

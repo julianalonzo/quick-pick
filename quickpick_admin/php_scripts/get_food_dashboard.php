@@ -23,7 +23,7 @@
         $query = 'SELECT food.food_id, food_name, CONCAT(\'data:image;base64,\', TO_BASE64(photo)) AS photo ' . 
                     ' FROM food WHERE food.food_id NOT IN ' . 
                     '(SELECT dashboard.food_id FROM dashboard ' . 
-                    'WHERE dashboard.date BETWEEN ? AND ?) AND username = ?';
+                    'WHERE dashboard.date BETWEEN ? AND ?) AND username = ? ORDER BY food_name';
 
         $statement = $conn->prepare($query);
 
