@@ -49,6 +49,10 @@ nav {
 }
 
 /* Menu */
+.calendar {
+    float: right;
+}
+
 #menu-text {
 	font-family: beaver;
 	margin: 0;
@@ -144,7 +148,7 @@ div.menu-items ol > ul > li:hover{
 }
 
 .food-price {
-	margin-left: 20vw;
+	text-align: right;
 }
 
 /* About */
@@ -176,7 +180,7 @@ div.menu-items ol > ul > li:hover{
 }
 
 .person img {
-	max-width: 10vw;
+	max-width: 120px;
 	border-radius: 15px;
 }
 
