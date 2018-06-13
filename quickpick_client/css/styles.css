@@ -1,6 +1,6 @@
 body {
     padding-bottom: 100px;
-    //background-color: #0c54602e;
+    background-color: #0c54602e;
     background-image: url(./img/bg_img.png);
     background-size: cover;
     font-family: campton;
@@ -27,7 +27,7 @@ body {
 }
 
 #container-background {
-    //background-color: white;
+    background-color: white;
     background-image: url(./img/menu-border.png);
     background-size: contain;
     background-repeat: repeat-y;
