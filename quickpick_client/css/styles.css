@@ -66,17 +66,13 @@ nav {
 
 h1.design {
     color: rgb(10,10,10);	
-	font-size: 8vh;
+	font-size: xx-large;
 	font-family: beaver;
 	font-weight: 1;
 	text-align: center;
 	margin: 0;
 	padding: 0;
 	margin-top: 10px;
-}
-
-#design-bottom {
-    padding-bottom: 10vh;
 }
 
 div.menu-items ol {
@@ -124,7 +120,8 @@ div.menu-items ol > ul > li:hover{
 
 /* Food */
 .food-img {
-	width: 30vw;
+	width: 60vw;
+    margin-left: 10vw;
     border-radius: 50%;
 }
 
@@ -134,18 +131,17 @@ div.menu-items ol > ul > li:hover{
 }
 
 #food-details #design-top {
-    padding-top: 7vh;
     margin-bottom: 5vh;
 }
 
 .food-name {
 	font-family: heart;
-	font-size: 8vh;
+	font-size: 5.5vh;
 }
 
 #with {
     font-family: beaver;
-    font-size: 5vh;
+    font-size: 3vh;
 }
 
 .food-place {
@@ -181,12 +177,34 @@ textarea {
     resize: none;
 }
 
-#foodModal {
-    margin-left: -43.5vw;
-}
-
-#foodModal .modal-content {
-    width: 80vw;
+@media screen and (min-width: 601px) {
+    .food-name {
+        font-size: 8vh;
+    }
+    
+    #with {
+        font-size: 5vh;
+    }
+    
+    #food-details #design-top {
+        padding-top: 7vh;
+    }
+    
+    #design-bottom {
+        padding-bottom: 10vh;
+    }
+    
+    .food-img {
+	   width: 28vw;
+    }
+    
+    #foodModal .modal-content {
+        width: 80vw;
+    }
+    
+    #foodModal {
+        margin-left: -43.5vw;
+    }
 }
 
 #foodModal .modal-title {
