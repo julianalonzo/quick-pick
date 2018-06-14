@@ -18,6 +18,29 @@
         $endDate = implode(" ", $endDate);
         $endDate = date($endDate);
 
+        $canteensQuery = 'SELECT DISTINCT display_name ' . 
+                'FROM dashboard JOIN food ON dashboard.food_id = food.food_id ' . 
+                'JOIN account ON food.username = account.username ' . 
+                'WHERE (date BETWEEN ? AND ?) ORDER BY 1';
+
+        $canteensStatement = $conn->prepare($canteensQuery);
+
+        $canteensStatement->bind_param('ss', $date, $endDate);
+
+        $canteensStatement->execute();
+
+        $canteensResult = $canteensStatement->get_result();
+
+        $canteens = array();
+
+        while ($row = $canteensResult->fetch_assoc()) {
+            $canteen = new stdClass();
+            $canteen->name = $row['display_name'];
+            $canteen->foods = array();
+
+            array_push($canteens, $canteen);
+        }
+
         $query = 'SELECT dashboard_id, ' . 
                 'food.food_id, ' . 
                 'display_name, ' . 
@@ -44,10 +67,19 @@
             $foods[] = $row;
         }
 
+        for ($i = 0; $i < count($canteens); $i++) {
+            for ($j = 0; $j < count($foods); $j++) {
+                if ($canteens[$i]->name == $foods[$j]['display_name']) {
+                    array_push($canteens[$i]->foods, $foods[$j]);
+                }
+            }
+        }
+
         $statement->close();
 
         $response = new stdClass();
         $response->date = $date;
-        $response->foods = $foods;
+        $response->canteens = $canteens;
 
         echo json_encode($response);
+        

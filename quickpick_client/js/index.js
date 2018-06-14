@@ -12,8 +12,13 @@ foodRequest.onreadystatechange = function() {
 }
 
 // Gets the date selected based on URL params and adjusts datepicker date
+let dateSelected = new Date();
+
 const currentURL = new URL(window.location.href);
-const dateSelected = new Date(currentURL.searchParams.get('date'));
+
+if (currentURL.searchParams.get('date')) {
+    dateSelected = new Date(currentURL.searchParams.get('date'));
+}
 
 let foodRequestURL = './php/get_foods.php?date=' + dateSelected.getFullYear() + '-' +
                         (dateSelected.getMonth() + 1) + '-' +
