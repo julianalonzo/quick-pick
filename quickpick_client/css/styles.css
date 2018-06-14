@@ -121,7 +121,9 @@ div.menu-items ol > ul > li:hover{
 }
 
 /* Canteens */
-
+.card {
+    margin-bottom: 3vh;
+}
 
 /* Food */
 .food-img {
