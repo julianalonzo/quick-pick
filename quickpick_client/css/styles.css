@@ -115,12 +115,17 @@ div.menu-items ol > ul > li:hover{
 	font-family: garamonds;
 }
 
+#datepicker {
+    margin-left: -10vw;
+}
+
 /* Canteens */
 
 
 /* Food */
 .food-img {
 	width: 30vw;
+    border-radius: 50%;
 }
 
 #food-details {
@@ -149,6 +154,85 @@ div.menu-items ol > ul > li:hover{
 
 .food-price {
 	text-align: right;
+}
+
+/* Here */
+#foodList .list-group-item:hover {
+    background-color: #eaeaea;
+    cursor: pointer;
+}
+
+#foodList .list-group-item h5 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.input-group-text {
+    background-color: #ffff;
+}
+
+.input-group-prepend + input {
+    border-left: none;
+    padding-left: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+#foodModal {
+    margin-left: -43.5vw;
+}
+
+#foodModal .modal-content {
+    width: 80vw;
+}
+
+#foodModal .modal-title {
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+#foodModal .close span {
+    line-height: 1.5;
+}
+
+#foodModal .price-prepend {
+    font-size: 24px;
+}
+
+#foodDescription {
+    width: 100%;
+    font-size: 16px !important;
+    font-weight: bolder;
+}
+
+#foodList input[type="checkbox"] {
+    display: none;
+}
+
+#foodList label {
+    cursor: pointer;
+}
+
+#foodList input[type="checkbox"] + label:before {
+    content: "\f111";
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-size: 24px;
+    margin-right: 20px;
+    color: #1b191b;
+}
+
+#foodList input[type="checkbox"]:checked + label:before {
+    content: "\f058";
+    color: #5cb85c;
 }
 
 /* About */
@@ -189,167 +273,3 @@ div.menu-items ol > ul > li:hover{
 	transform: scale(1.2);
 	box-shadow: 1px 1px 100px white;
 }
-
-/* #foodList .list-group-item:hover {
-    background-color: #eaeaea;
-    cursor: pointer;
-}
-
-#foodList .list-group-item h5 {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.food-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-.input-group-text {
-    background-color: #ffff;
-}
-
-.input-group-prepend + input {
-    border-left: none;
-    padding-left: 0;
-}
-
-.float {
-	position: fixed;
-	width: 60px;
-	height: 60px;
-	bottom: 20px;
-	right: 20px;
-	background-color: #1b191b;
-	color: #ffff;
-	border-radius: 50px;
-	text-align: center;
-    box-shadow: 2px 2px 3px #999999;
-    z-index: 2;
-    cursor: pointer;
-}
-
-textarea {
-    resize: none;
-}
-
-.food-img-preview {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-}
-
-#foodAddedAlert {
-    display: none;
-}
-
-.food-img-lg {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-}
-
-.description {
-    font-size: 14px;
-    line-height: 1.2;
-}
-
-#foodModal .simple-form {
-    background-color: transparent;
-    border: none;
-    font-size: 24px;
-    color: #000000;
-}
-
-#foodModal .modal-title {
-    font-size: 24px;
-    font-weight: bolder;
-}
-
-#foodModal .close span {
-    line-height: 1.5;
-}
-
-#foodModal .price-prepend {
-    font-size: 24px;
-}
-
-#foodDescription {
-    width: 100%;
-    font-size: 16px !important;
-    font-weight: bolder;
-}
-
-.circular-button {
-    width: 60px;
-    height: 60px;
-    background-color: #1b191b;
-    color: #ffff;
-    border: none;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 22px;
-}
-
-#deleteFoodForm {
-    display: none;
-}
-
-#doneButton {
-    display: none;
-}
-
-#cancelButton {
-    display: none;
-}
-
-#imageUploader {
-    display: none;
-}
-
-.btn-remove {
-    background-color: transparent;
-    font-size: 24px;
-    color: #d9534f;
-}
-
-#dashboardForm {
-    width: 100%;
-}
-
-#foodList input[type="checkbox"] {
-    display: none;
-}
-
-#foodList label {
-    cursor: pointer;
-}
-
-#foodList input[type="checkbox"] + label:before {
-    content: "\f111";
-    font-family: "Font Awesome 5 Free";
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    font-size: 24px;
-    margin-right: 20px;
-    color: #1b191b;
-}
-
-#foodList input[type="checkbox"]:checked + label:before {
-    content: "\f058";
-    color: #5cb85c;
-}
-
-.date-arrow {
-    color: #000000;
-}
-
-.date-arrow:active, .date-arrow:hover {
-    color: #000000;
-} */
