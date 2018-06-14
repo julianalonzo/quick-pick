@@ -305,7 +305,8 @@ textarea {
     }
     
     .food-img {
-	   width: 28vw;
+        width: 28vw;
+        margin-left: 0;
     }
     
     #foodModal .modal-content {
