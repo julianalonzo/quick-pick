@@ -53,48 +53,31 @@
                 <div class="row">
                     <div class="col-12">
                         <ul id="foodList" class="list-group">
-                            <li class="list-group-item d-flex align-items-center" data-id="" data-toggle="modal" data-target="#foodModal">
-                                <h5 class="">Chicken Adobo</h5>
-                            </li>
-                            <li class="list-group-item d-flex align-items-center" data-id="" data-toggle="modal" data-target="#foodModal">
-                                <h5 class="">Chopsuey</h5>
-                            </li>
-                            <li class="list-group-item d-flex align-items-center" data-id="" data-toggle="modal" data-target="#foodModal">
-                                <h5 class="">Breaded Porkchop</h5>
-                            </li>
-                            <li class="list-group-item d-flex align-items-center" data-id="" data-toggle="modal" data-target="#foodModal">
-                                <h5 class="">Pork Sinigang</h5>
-                            </li>
-                            <li class="list-group-item d-flex align-items-center" data-id="" data-toggle="modal" data-target="#foodModal">
-                                <h5 class="">Chicken Teriyaki</h5>
-                            </li>
-                            <li class="list-group-item d-flex align-items-center" data-id="" data-toggle="modal" data-target="#foodModal">
-                                <h5 class="">Beef Caldereta</h5>
-                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="foodModal" tabindex="-1" role="dialog">
+            <div class="modal fade" id="foodModal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
                 <div class="modal-dialog">
-                <!-- Modal content-->
+                    <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">Name of food</h4>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title"></h4>
+                            <button type="button" class="close">&times;</button>
                         </div>
                         <div class="modal-body">
                             <div class="container">
                                 <div class="row" id="food-list">
                                     <div class="container col-md-4 col-sm-11">
-                                        <img src="./css/img/empty-plate.png" class="food-img">
+                                        <img src="./css/img/empty-plate.png" class="food-img" id="foodImage">
                                     </div>
                                     <div class="container col-md-6" id="food-details">
                                         <h1 class="design" id="design-top">U</h1>
                                         <div class="container col-sm-10">
-                                            <h2 class="food-name">Chicken Adobo<span id="with"> j </span>rice</h2>
-                                            <p class="food-place">Dish available @Emerson Canteen</p>
-                                            <p class="food-price">Php 50.00</p>
+                                            <h2 class="food-name" id="foodName"></h2>
+                                            <p class="food-place" id="foodPlace"></p>
+                                            <p class="food-place" id="foodDescription"></p>
+                                            <p class="food-price" id="foodPrice"></p>
                                         </div>
                                         <h1 class="design" id="design-bottom">X</h1>
                                     </div>
@@ -102,7 +85,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-default" id="closeModalButton">Close</button>
                         </div>
                     </div>
                 </div>
@@ -113,5 +96,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <script src="./js/foods.js"></script>
     </body>
 </html>

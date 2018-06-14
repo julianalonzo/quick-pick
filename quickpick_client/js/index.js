@@ -20,7 +20,7 @@ if (currentURL.searchParams.get('date')) {
     dateSelected = new Date(currentURL.searchParams.get('date'));
 }
 
-let foodRequestURL = './php/get_foods.php?date=' + dateSelected.getFullYear() + '-' +
+let foodRequestURL = './php/get_served_foods.php?date=' + dateSelected.getFullYear() + '-' +
                         (dateSelected.getMonth() + 1) + '-' +
                         dateSelected.getDate();
 
@@ -59,6 +59,9 @@ function loadUlams(canteens) {
             const foodNameText = document.createTextNode(canteens[i].foods[j].food_name);
             const foodItem = document.createElement('LI');
             foodItem.appendChild(foodNameText);
+            foodItem.addEventListener('click', function() {
+                window.location.href = './foods.html?foodId=' + canteens[i].foods[j].food_id;
+            });
             
             foodListContainer.appendChild(foodItem);
         }
