@@ -40,6 +40,19 @@ $('#datepicker').datepicker({
     }
 });
 
+// Change URL when date is changed on datepicker
+$('#datepicker2').datepicker({
+    defaultDate: dateSelected,
+    onSelect: function() {
+        let date = new Date(this.value);
+        date = date.getFullYear() + '-' +
+                (date.getMonth() + 1) + '-' +
+                date.getDate();
+
+        window.location.href = './index.html?date=' + date + ' 00:00:00';
+    }
+});
+
 // Generate ulams
 function loadUlams(canteens) {
     const menuContainer = document.getElementById('menuContainer');
