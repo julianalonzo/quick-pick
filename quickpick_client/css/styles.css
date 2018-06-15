@@ -110,9 +110,9 @@ div.menu-items ul > li {
 }
 
 div.menu-items ol > ul > li:hover{
-	transition: 0.4s ease;
+	transition: 0.2s ease;
 	cursor: pointer;	
-	transform: scale(1.45);
+	transform: scale(1.2);
 	font-family: garamonds;
 }
 
