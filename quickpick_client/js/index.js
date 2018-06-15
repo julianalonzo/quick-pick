@@ -24,6 +24,9 @@ let foodRequestURL = './php/get_served_foods.php?date=' + dateSelected.getFullYe
                         (dateSelected.getMonth() + 1) + '-' +
                         dateSelected.getDate();
 
+const mobileDatePicker = document.getElementById('datepicker2');
+mobileDatePicker.setAttribute('value', (dateSelected.getMonth() + 1) + '-' + dateSelected.getDate() + '-' + dateSelected.getFullYear());
+
 foodRequest.open('GET', foodRequestURL, true);
 foodRequest.send();
 
