@@ -291,7 +291,7 @@ textarea {
 }
 
 @media screen and (min-width: 601px) {
-    #datepicker2 {
+    #calendar2 {
         display: none;
     }
     
