@@ -27,7 +27,7 @@ nav {
 }
 
 .food-img {
-    width: 50px;
+    width: auto;
     height: 50px;
     border-radius: 50%;
 }
@@ -61,7 +61,7 @@ textarea {
 }
 
 .food-img-preview {
-    width: 70px;
+    width: auto;
     height: 70px;
     border-radius: 50%;
 }
@@ -71,7 +71,7 @@ textarea {
 }
 
 .food-img-lg {
-    width: 100px;
+    width: auto;
     height: 100px;
     border-radius: 50%;
 }

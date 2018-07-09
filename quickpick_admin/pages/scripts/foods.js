@@ -13,6 +13,7 @@ request.onreadystatechange = () => {
             for (let i = 0; i < response.length; i++) {
                 let foodItemImage = document.createElement('IMG');
                 foodItemImage.classList.add('food-img', 'mr-3');
+                foodItemImage.setAttribute('width','100%');
 
                 if (response[i].photo != 'data:image;base64,') {
                     foodItemImage.setAttribute('src', response[i].photo);
