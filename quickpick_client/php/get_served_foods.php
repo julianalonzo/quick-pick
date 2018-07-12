@@ -46,7 +46,8 @@
             'display_name, ' . 
             'food_name, ' . 
             'price, ' . 
-            'date, ' . 
+            'date, ' .
+			'DATE_FORMAT(date, "%H:%i") AS timeonly, ' .
             'CONCAT(\'data:image;base64,\', TO_BASE64(photo)) AS photo ' .
             'FROM dashboard JOIN food ON dashboard.food_id = food.food_id ' .
             'JOIN account ON food.username = account.username ' .

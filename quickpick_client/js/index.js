@@ -72,7 +72,7 @@ function loadUlams(canteens) {
         // Ulams that will be served
         const foodListContainer = document.createElement('UL');
         for (let j = 0; j < canteens[i].foods.length; j++) {
-            const foodNameText = document.createTextNode(canteens[i].foods[j].food_name);
+            const foodNameText = document.createTextNode(canteens[i].foods[j].food_name+" @ "+canteens[i].foods[j].timeonly);
             const foodItem = document.createElement('LI');
             foodItem.appendChild(foodNameText);
             foodItem.addEventListener('click', function() {

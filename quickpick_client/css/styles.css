@@ -3,7 +3,7 @@ body {
     background-color: #0c54602e;
     background-image: url(./img/bg_img.png);
     background-size: cover;
-    font-family: campton;
+    font-family: comfortaa;
     height: inherit;
 }
 
@@ -156,7 +156,7 @@ div.menu-items ol > ul > li:hover{
 }
 
 .food-price {
-	text-align: right;
+	text-align: center;
 }
 
 /* Here */
@@ -200,7 +200,11 @@ textarea {
 #foodDescription {
     width: 100%;
     font-size: 16px !important;
-    font-weight: bolder;
+    font-style: italic;
+}
+
+#reserve {
+	text-align: center;
 }
 
 #foodList input[type="checkbox"] {

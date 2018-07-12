@@ -77,9 +77,23 @@ function viewFood(ulam) {
     foodName.appendChild(foodNameText);
 
     const foodPlaceText = document.createTextNode('Dish available @ ' + ulam.display_name);
+	const foodTimeText = document.createTextNode('Served @ ' + ulam.time);
     const foodPlace = document.getElementById('foodPlace');
+	var space = document.createElement('br');
     foodPlace.appendChild(foodPlaceText);
+	foodPlace.appendChild(space);
+	foodPlace.appendChild(foodTimeText);
+	
+	//for hidden inputs
+	var input = document.createElement("input");
+	input.setAttribute("type", "hidden");
+	input.setAttribute("name", "dashboard_id");
+	input.setAttribute("value", ulam.dashboard_id);
+	
+	//append to form element that you want .
+	document.getElementById("reservationForm").appendChild(input);
 
+	//
     const foodDescriptionText = document.createTextNode(ulam.description);
     const foodDescription = document.getElementById('foodDescription');
     foodDescription.appendChild(foodDescriptionText);
