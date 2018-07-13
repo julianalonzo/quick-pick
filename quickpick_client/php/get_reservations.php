@@ -12,8 +12,8 @@
                     'FROM food INNER JOIN dashboard USING(food_id) ' .
                     'INNER JOIN reservation USING(dashboard_id) ' .
                     'INNER JOIN account ON ' .
-                    'reservation.username= account.username ' .
-                    'WHERE food.username = ?;';
+                    'reservation.username = account.username; ' .
+                    'WHERE account.username = ?;';
 
         $statement = $conn->prepare($query);
 
