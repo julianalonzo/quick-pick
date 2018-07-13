@@ -7,10 +7,10 @@ body {
     height: inherit;
 }
 
-@font-face {
+/*@font-face {
     font-family: campton;
     src: url(./fonts/campton.otf);
-}
+}*/
 
 @font-face {
     font-family: alexbrush;
@@ -287,7 +287,7 @@ textarea {
         font-size: 5vh;   
     }
     .person {
-        font-size: 2vh;
+        font-size: 1.9vh;
     }
     .person img {
 	   max-width: 27vw;
