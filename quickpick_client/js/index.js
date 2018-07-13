@@ -86,3 +86,35 @@ function loadUlams(canteens) {
         menuContainer.appendChild(foodListContainer);
     }
 }
+
+const url = new URL(window.location.href);
+
+if (url.searchParams.get('isLoggedIn') == 'true') {
+	getUsername();
+} 
+
+function getUsername() {
+	//alert('pasok ako men');
+	// Get current user
+	let userRequest = new XMLHttpRequest();
+
+	userRequest.onreadystatechange = function() {
+		if (userRequest.readyState == 4 && userRequest.status == 200) {
+
+			let response = JSON.parse(userRequest.responseText);
+
+			console.log('Result: ' + userRequest.responseText);
+
+			const user = response.users;
+
+			const username = document.getElementById('username');
+
+			username.innerHTML = user[0].display_name;
+		}
+	}
+
+	let userRequestUrl = './php/get_user.php';
+
+	userRequest.open('GET', userRequestUrl, true);
+	userRequest.send();
+}

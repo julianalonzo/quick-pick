@@ -23,7 +23,7 @@
 		
 		if ($is_found) {
             $_SESSION['username'] = $username;
-            Header('Location: ../index.html?user=' . $result);
+            Header('Location: ../index.html?isLoggedIn=true');
         } else {
             Header('Location: ../index.html?isLoggedIn=false');
         }
