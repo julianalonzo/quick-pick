@@ -17,7 +17,7 @@
 
         $statement = $conn->prepare($query);
 
-        $statement->bind_param('s', $food.username);
+        $statement->bind_param('s', $account.username);
 
         $statement->execute();
 
