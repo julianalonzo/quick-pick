@@ -1,5 +1,10 @@
 body {
-    padding-bottom: 100px;
+    padding-bottom: 10vh;
+    background-color: #0c54602e;
+    background-image: url(./assets/bg_img.png);
+    background-size: cover;
+    font-family: comfortaa;
+    height: inherit;
 }
 
 nav {
@@ -19,6 +24,10 @@ nav {
 .nav-link:hover, 
 .nav-item.active > .nav-link {
     color: #eaeaea;
+}
+
+main {
+    padding-top: 5vh;
 }
 
 #foodList .list-group-item:hover {
@@ -200,3 +209,42 @@ textarea {
 #foodId {
     display: none;
 }
+
+#main {
+    width: 100%;
+    padding-top: 5vh;
+}
+
+#about h2 {
+    text-align: center;
+    padding-bottom: 2vh;
+}
+
+#about div {
+    padding-bottom: 4vh;
+}
+
+.person p span {
+    display: block;
+    text-align: center;
+}
+
+.person p {
+    padding-top: 2vh;
+}
+
+.person {
+    padding-left: 3vw;
+}
+
+.person img {
+	max-width: 120px;
+	border-radius: 15px;
+}
+
+.person img:hover {
+	transition: 0.3s ease;
+	transform: scale(1.2);
+	box-shadow: 1px 1px 100px white;
+}
+

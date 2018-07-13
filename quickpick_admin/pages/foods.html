@@ -32,6 +32,9 @@
 				<li class="nav-item">
                     <a class="nav-link" href="./reservation.html">Reservation</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./about.html">About</a>
+                </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -40,147 +43,147 @@
             </ul>
         </div>
     </nav>
-
-    <div class="container-fluid">
-        <div class="row align-items-center mb-3">
-            <div class="col-12">
-                <h1 class="mb-0">Foods</h1>
+    <main>
+        <div class="container">
+            <div class="row align-items-center mb-3">
+                <div class="col-12">
+                    <h1 class="mb-0">Foods</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="alert alert-success" role="alert" id="foodAddedAlert">
+                        <strong>Success!</strong> Food added.
+                    </div>
+                    <ul id="foodList" class="list-group">
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="alert alert-success" role="alert" id="foodAddedAlert">
-                    <strong>Success!</strong> Food added.
-                </div>
-                <ul id="foodList" class="list-group">
-                </ul>
+
+        <div class="modal fade" id="foodModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <form action="../php_scripts/edit_food.php" method="POST" enctype="multipart/form-data">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <input type="text" class="form-control simple-form overflow-ellipsis" id="modalTitle" name="food_name" required>
+                                    </div>
+                                    <div class="col-2">
+                                        <button type="button" class="close" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12 mb-3">                   
+                                        <div class="d-flex">
+                                            <div class="mr-3">
+                                                <img src="../assets/logo.png" alt="Quickpick" id="foodImage" class="food-img-lg mr-3">
+                                            </div>
+                                            <div id="imageUploader">
+                                                <input type="file" class="form-control-file" id="imageUploadFile" name="photo" accept="image/*" name="photo">
+                                                <small class="form-text text-muted">
+                                                    You can edit the image of the food by uploading your own. This is optional.
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="food-content">                               
+                                            <span class="price-prepend" id="pricePrepend">₱</span><input type="number" id="foodPrice" class="simple-form" name="price" required>                                                            
+                                            <textarea name="description" id="foodDescription" cols="10" rows="3" disabled class="simple-form mt-3" name="description" required></textarea>
+                                            <input type="number" id="foodId" name="food_id">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-right mt-5 pr-0">
+                                        <button id="editButton" class="circular-button mr-1" type="button">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </button>
+                                        <button id="deleteButton" class="circular-button bg-danger" type="button">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                        <button id="doneButton" class="circular-button bg-success mr-1" type="submit">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                        <button id="cancelButton" class="circular-button bg-danger" type="button">
+                                            <i class="fas fa-ban"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-    </div>
 
-    <div class="modal fade" id="foodModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <form action="../php_scripts/edit_food.php" method="POST" enctype="multipart/form-data">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-10">
-                                    <input type="text" class="form-control simple-form overflow-ellipsis" id="modalTitle" name="food_name" required>
-                                </div>
-                                <div class="col-2">
-                                    <button type="button" class="close" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                            </div>
+        <button class="float align-items-start" data-toggle="modal" data-target="#addFoodModal">
+            <i class="fa fa-plus"></i>
+        </button>
+
+        <div class="modal fade" id="addFoodModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <form action="../php_scripts/add_food.php" method="POST" enctype="multipart/form-data">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Add Food</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-12 mb-3">                   
-                                    <div class="d-flex">
-                                        <div class="mr-3">
-                                            <img src="../assets/logo.png" alt="Quickpick" id="foodImage" class="food-img-lg mr-3">
-                                        </div>
-                                        <div id="imageUploader">
-                                            <input type="file" class="form-control-file" id="imageUploadFile" name="photo" accept="image/*" name="photo">
-                                            <small class="form-text text-muted">
-                                                You can edit the image of the food by uploading your own. This is optional.
-                                            </small>
-                                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="foodName" class="mb-1">Name</label>
+                                <input type="text" class="form-control" placeholder="(e.g., Adobong Manok)" id="foodName" name="foodName" required> 
+                            </div>
+                            <div class="form-group">
+                                <label for="description" class="mb-1">Description</label>
+                                <textarea name="description" id="description" name="foodDescription" rows="2" class="form-control" placeholder="(e.g., Our very own special Adobong Manok!)" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="price" class="mb-1">Price</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">₱</span>
+                                    </div>
+                                    <input id="price" name="price" type="number" class="form-control" required>
+                                </div>                              
+                            </div>
+                            <div class="form-group">
+                                <label for="image">Image</label><br>
+                                <div class="d-flex">
+                                    <div class="mr-3">
+                                        <img src="../assets/logo.png" class="food-img-preview" id="uploadPreview">
+                                    </div>
+                                    <div>
+                                        <input type="file" class="form-control-file" id="image" name="photo" accept="image/*">
+                                        <small id="fileHelp" class="form-text text-muted">You can change the default image of the food by uploading your own. This is optional.</small>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <div class="food-content">                               
-                                        <span class="price-prepend" id="pricePrepend">₱</span><input type="number" id="foodPrice" class="simple-form" name="price" required>                                                            
-                                        <textarea name="description" id="foodDescription" cols="10" rows="3" disabled class="simple-form mt-3" name="description" required></textarea>
-                                        <input type="number" id="foodId" name="food_id">
-                                    </div>
-                                </div>
-                                <div class="col-12 text-right mt-5 pr-0">
-                                    <button id="editButton" class="circular-button mr-1" type="button">
-                                        <i class="fas fa-pencil-alt"></i>
-                                    </button>
-                                    <button id="deleteButton" class="circular-button bg-danger" type="button">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                    <button id="doneButton" class="circular-button bg-success mr-1" type="submit">
-                                        <i class="fas fa-check"></i>
-                                    </button>
-                                    <button id="cancelButton" class="circular-button bg-danger" type="button">
-                                        <i class="fas fa-ban"></i>
-                                    </button>
-                                </div>
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success">Add food</button>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
 
-    <button class="float align-items-start" data-toggle="modal" data-target="#addFoodModal">
-        <i class="fa fa-plus"></i>
-    </button>
+        <form action="../php_scripts/delete_food.php" id="deleteFoodForm" method="POST">
+            <input type="number" id="foodIdDelete" name="foodId">
+        </form>
 
-    <div class="modal fade" id="addFoodModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <form action="../php_scripts/add_food.php" method="POST" enctype="multipart/form-data">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Add Food</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="foodName" class="mb-1">Name</label>
-                            <input type="text" class="form-control" placeholder="(e.g., Adobong Manok)" id="foodName" name="foodName" required> 
-                        </div>
-                        <div class="form-group">
-                            <label for="description" class="mb-1">Description</label>
-                            <textarea name="description" id="description" name="foodDescription" rows="2" class="form-control" placeholder="(e.g., Our very own special Adobong Manok!)" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="price" class="mb-1">Price</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">₱</span>
-                                </div>
-                                <input id="price" name="price" type="number" class="form-control" required>
-                            </div>                              
-                        </div>
-                        <div class="form-group">
-                            <label for="image">Image</label><br>
-                            <div class="d-flex">
-                                <div class="mr-3">
-                                    <img src="../assets/logo.png" class="food-img-preview" id="uploadPreview">
-                                </div>
-                                <div>
-                                    <input type="file" class="form-control-file" id="image" name="photo" accept="image/*">
-                                    <small id="fileHelp" class="form-text text-muted">You can change the default image of the food by uploading your own. This is optional.</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">Add food</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <form action="../php_scripts/delete_food.php" id="deleteFoodForm" method="POST">
-        <input type="number" id="foodIdDelete" name="foodId">
-    </form>
-
-    <form action="../php_scripts/update_food.php" id="updateFoodForm" method="POST">
-    </form>
-
+        <form action="../php_scripts/update_food.php" id="updateFoodForm" method="POST">
+        </form>
+    </main>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
