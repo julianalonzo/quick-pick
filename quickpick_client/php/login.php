@@ -7,7 +7,7 @@
 		$username = $_POST['username'];
         $password = $_POST['password'];
 
-        $query = 'SELECT COUNT(username) AS is_found FROM account WHERE username = ? AND password = ?';
+        $query = 'SELECT display_name FROM account WHERE username = ? AND password = ?';
     
         $statement = $conn->prepare($query);
 
@@ -21,9 +21,9 @@
 
         $is_found = $result;
 		
-		if ($is_found > 0) {
+		if ($is_found) {
             $_SESSION['username'] = $username;
-            Header('Location: ../index.html?isLoggedIn=true');
+            Header('Location: ../index.html?user=' . $result);
         } else {
             Header('Location: ../index.html?isLoggedIn=false');
         }

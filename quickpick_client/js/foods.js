@@ -12,26 +12,6 @@ foodRequest.onreadystatechange = function() {
 foodRequest.open('GET', './php/get_foods.php', true);
 foodRequest.send();
 
-// Get user
-const userRequest = new XMLHttpRequest();
-
-userRequest.onreadystatechange = function() {
-	if (userRequest.readyState == 4 && userRequest.status == 200) {
-		const response = JSON.parse(userRequest.responseText);
-		
-		changeUser(response.user);
-	}
-}
-
-request.open('GET', '../php/get_user.php', true);
-request.send();
-
-// Display user
-function changeUser(user) {
-	const nameContainer = document.getElementById('userSession');
-	nameContainer.innerHTML = user.display_name;
-}
-
 // Generate food into DOM
 function loadUlams(ulams) {
     const foodList = document.getElementById('foodList');
