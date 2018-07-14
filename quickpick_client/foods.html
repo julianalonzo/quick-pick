@@ -56,36 +56,48 @@
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
 						<form action="./php/login.php" method="POST" id="signInForm">
-                        <div class="modal-body">
-                            <div class="container">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        </div>
+                                        <input id="username" name="username" type="text" class="form-control" placeholder="Username">
                                     </div>
-                                    <input id="username" name="username" type="text" class="form-control" placeholder="Username">
-                                </div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                        </div>
+                                        <input id="password" name="password" type="password" class="form-control" placeholder="Password">
                                     </div>
-                                    <input id="password" name="password" type="password" class="form-control" placeholder="Password">
+                                    <div class="input-group mb-3">
+                                        <button type="submit" class="btn btn-light form-control">Sign in</button>
+                                    </div>
+                                    <!--div id="loginAlert" class="alert alert-danger alert-dismissible fade show text-left" role="alert">
+                                        Incorrect username or password.
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div-->
                                 </div>
-                                <div class="input-group mb-3">
-                                    <button type="submit" class="btn btn-light form-control">Sign in</button>
-                                </div>
-                                <!--div id="loginAlert" class="alert alert-danger alert-dismissible fade show text-left" role="alert">
-                                    Incorrect username or password.
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div-->
                             </div>
-                        </div>
 						</form>
                     </div>
                 </div>
             </div> 
             <div class="container">
+                <div id="loginAlert" class="alert alert-warning alert-dismissible fade show text-left" role="alert">
+                  You must be <strong>signed in</strong> in order to make a reservation.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!--div id="loginAlert" class="alert alert-warning fade show text-left" role="alert">
+                    You must be signed in order to make a reservation.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button
+                </div-->
                 <div class="row align-items-center mb-3">
                     <div class="col-6">
                         <h1 class="mb-0">Foods</h1>
@@ -141,8 +153,7 @@
                         </div>
                     </div>
                 </div>
-            </div>  
-            
+            </div> 
         </main>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -150,5 +161,14 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
         <script src="./js/foods.js"></script>
+        <script>
+            const url = new URL(window.location.href);
+
+                if (url.searchParams.get('isLoggedIn') == 'false') {
+                    document.getElementById('loginAlert').style.display = 'block';
+                } else {
+                    document.getElementById('loginAlert').style.display = 'block?';
+                }
+        </script>
     </body>
 </html>

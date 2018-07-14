@@ -23,7 +23,9 @@
 
 		if ($statement->affected_rows > 0) {
 			Header('Location: ../foods.html');
-		} 
+		} else {
+            Header('Location: ../foods.html?isLoggedIn=false');
+        }
 
 		$statement->close();
 	}

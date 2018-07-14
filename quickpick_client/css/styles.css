@@ -317,7 +317,11 @@ textarea {
     }
     
     #food-details #design-top {
-        padding-top: 7vh;
+        padding-top: 2vh;
+    }
+    
+    #food-details #design-bottom {
+        padding-bottom: 2vh;
     }
     
     #design-bottom {

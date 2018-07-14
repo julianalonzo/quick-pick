@@ -33,5 +33,5 @@
 
         echo json_encode($foods);
     } else {
-        Header('Location: ../reservation.html');
+        Header('Location: ../quickpick_client/reservation.html');
     }
